@@ -50,6 +50,8 @@ df.dropna()
 max_vals = np.max(np.abs(df[['Height','Weight']]))
 max_vals
 ```
+![4-1](https://github.com/Divya110205/EXNO-4-DS/assets/119404855/3fb5d9db-ce04-4209-8200-acbdedcbf250)
+
 ### STANDARD SCALING
 ```
 df1=pd.read_csv("/content/bmi.csv")
@@ -58,6 +60,8 @@ sc=StandardScaler()
 df1[['Height','Weight']]=sc.fit_transform(df1[['Height','Weight']])
 df1.head(10)
 ```
+![4-2](https://github.com/Divya110205/EXNO-4-DS/assets/119404855/6fda39e9-e16d-4b70-9f95-0d6c932bb095)
+
 ### MIN-MAX SCALING:
 ```
 from sklearn.preprocessing import MinMaxScaler
@@ -65,6 +69,8 @@ scaler=MinMaxScaler()
 df[['Height','Weight']]=scaler.fit_transform(df[['Height','Weight']])
 df.head(10)
 ```
+![4-3](https://github.com/Divya110205/EXNO-4-DS/assets/119404855/bc8913b7-53f7-4ce1-9479-b1bff3dc60bb)
+
 ### MAXIMUM ABSOLUTE SCALING:
 ```
 df3=pd.read_csv("/content/bmi.csv")
@@ -73,6 +79,8 @@ scaler = MaxAbsScaler()
 df3[['Height','Weight']]=scaler.fit_transform(df3[['Height','Weight']])
 df3
 ```
+![4-4](https://github.com/Divya110205/EXNO-4-DS/assets/119404855/4d1a34b3-eaab-44c8-9a58-a51ce8e3b40c)
+
 ### ROBUST SCALING:
 ```
 df4=pd.read_csv("/content/bmi.csv")
@@ -81,6 +89,8 @@ scaler = RobustScaler()
 df4[['Height','Weight']]=scaler.fit_transform(df4[['Height','Weight']])
 df4.head()
 ```
+![4-5](https://github.com/Divya110205/EXNO-4-DS/assets/119404855/996daa6d-0915-4c89-8cd2-e3a756a1faa7)
+
    ### The best feature scaling methods for 'bmi' dataset could be MinMax Scaling.MinMax Scaling scales the data to a fixed range, preserving the original range of the data.While MinMax Scaling is sensitive to outliers, it can still be effective if your dataset does not contain extreme outliers.
 ## FEATURE SELECTION:
 ```
@@ -89,6 +99,8 @@ df=pd.read_csv("/content/income(1) (1).csv",na_values=[" ?"])
 df=df.dropna(axis=0)
 df
 ```
+![4-6](https://github.com/Divya110205/EXNO-4-DS/assets/119404855/b639a79c-a565-43a4-9990-cb725bfaf892)
+
 ### FILTER METHOD:
 ```
 import pandas as pd
@@ -111,6 +123,8 @@ print(selected_features_chi2)
 print("\nSelected features using ANOVA:")
 print(selected_features_anova)
 ```
+![4-7](https://github.com/Divya110205/EXNO-4-DS/assets/119404855/b512e219-58e5-41f3-8590-d1c625f68a36)
+
 ### WRAPPER METHOD:
 ```
 import pandas as pd
@@ -129,6 +143,8 @@ selected_features = X.columns[rfe.support_]
 print("Selected features using RFE:")
 print(selected_features)
 ```
+![4-8](https://github.com/Divya110205/EXNO-4-DS/assets/119404855/71b2f2d8-4bc0-47e0-9924-4e81e6da0a3a)
+
 ### EMBEDDED METHOD:
 ```
 import pandas as pd
@@ -147,6 +163,8 @@ selected_features = X.columns[selected_features_indices]
 print("Selected features using embedded method (Lasso regularization):")
 print(selected_features)
 ```
+![4-9](https://github.com/Divya110205/EXNO-4-DS/assets/119404855/a21884e7-1a64-498f-b902-77afb2147e13)
+
 ###   For this 'income' dataset, Embedded Method is best for feature selection.Embedded methods provide feature importance scores directly within the context of the chosen model. Embedded methods automatically select relevant features during model training, which can be beneficial for reducing overfitting and improving generalization performance
 # RESULT:
      Thus, Feature selection and Feature scaling has been performed using the given dataset.
